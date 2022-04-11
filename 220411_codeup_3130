@@ -18,35 +18,32 @@ public class codeup {
 		long [] arr = new long[N];
 		long count = 0;
 		
-		//arr[0] > arr[1] count++;
-		//arr[0] < arr[2] break;
-		//n번째 소와 1~n번째 소의 크기를 비교한다.
-		//
 		
 		for(int i = 0; i < N; i++){
-		    arr[i] = sc.nextInt();	
+		    arr[i] = sc.nextInt();	//배열의 길이가 N인 배열을 만든다.
 		}
 		
-		//배열의 길이 = 5;
-		
-		for(int i = 0; i<arr.length;i++){
-			long k = arr[i];
+		//c1은 고정 된 소 
+		//c2는 비교대상인 소
+		for(int i = 0; i<arr.length;i++){ //arr[i]를 고정시키고 다음 값들과 차근차근
+			long c1 = arr[i];              //비교해야겠다는 생각
 			loofOut:
-			for(int j = 1; j<arr.length-i; j++){//i=1 j=2
-												  //	
-					long c = arr[i+j];//i=4 j =0;
-			      
-					if(k>c){
+			for(int j = 1; j<arr.length-i; j++){
+												 	
+					long c2 = arr[i+j]; //j는 +1 +2 +3... length-i-1까지 더해줌
+			                           //예를  들어 길이가 5고 i가 4라면 
+									   //5-4-1해서 0이 나옴... 마지막 소는 아무것도 볼 수 없음
+									   
+									
+					if(c1>c2){           //만약 다음 소보다 크다면 count를 세줌 
 			        	  count++;
-			          }else if(k<=c){
+			          }else if(c1<=c2){  //작거나 같다면 for문을 벗어남
 			        	  break loofOut;
 			          }
 				}				
 			}
-		System.out.println(count);
+		System.out.println(count); // 카운트 값을 출력함
 		}
 			
 	}	
-
-	
 

@@ -1,0 +1,40 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class _10816 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		int count=0;
+		int b = 0;
+		int a = 0;
+	
+		
+		
+		int N = sc.nextInt();
+		long arr[] = new long [N];
+		int M = sc.nextInt();
+		long arr2[] = new long [M];
+		
+		for(int i = 0; i<arr2.length; i++){
+			arr2[i]=a;{
+				for (int j = 0; j<arr.length;j++){
+					
+					for(int k = 1; k<arr.length-j;k++){
+						arr[j+k]=b;
+						if(a==b){
+								count++;
+								}
+		              }
+				
+                }
+			System.out.println(count);
+           }
+		
+	  }
+   }
+}

@@ -1,40 +1,79 @@
 package baekjoon;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
+//import java.util.Scanner;
+//for 2개 in 3개
+/*
+ 	10
+	6 3 2 10 10 10 -10 -10 7 3
+	8
+	10 9 -5 2 3 4 5 -10
+ */
 public class _10816 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-
-		Scanner sc = new Scanner(System.in);
-		
-		int count=0;
-		int b = 0;
-		int a = 0;
 	
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));//선언
+
+		int N = Integer.parseInt(br.readLine());
+		int[] arr = new int[N];		
+		
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		for(int i = 0; i< N; i++){
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+		
+	
+		int M = Integer.parseInt(br.readLine());
+		int[] arr2 = new int[M];		
+		
+		StringTokenizer st2 = new StringTokenizer(br.readLine(), " ");
+		for(int i = 0; i< M; i++){
+			arr2[i] = Integer.parseInt(st2.nextToken());
+		}
 		
 		
-		int N = sc.nextInt();
-		long arr[] = new long [N];
-		int M = sc.nextInt();
-		long arr2[] = new long [M];
 		
-		for(int i = 0; i<arr2.length; i++){
-			arr2[i]=a;{
-				for (int j = 0; j<arr.length;j++){
-					
-					for(int k = 1; k<arr.length-j;k++){
-						arr[j+k]=b;
-						if(a==b){
-								count++;
-								}
-		              }
+		int[] arr3 = new int[M];//M이 몇개 가진지 비교하는 거니까
+								//출력이 배열로 돼서 만듬
+	
+		int count = 0;
+		for(int i = 0; i<M; i++){
 				
-                }
-			System.out.println(count);
-           }
+				
+				for(int j = 0; j<N; j++){//10
+
+//					0  1  2   3   4   5    6   7   8   9 
+					
+//	N	j			10
+//	arr				6  3  2  10   10  10  -10 -10  7   3 
+//	M	i			8
+//	arr2        	10 9 -5   2    3   4   5  -10
+
+//  결과				3 0 0 1 2 0 0 2
+					if(arr2[i]==arr[j]){//arr2[0]==10; arr[0]==6;
+						count++;
+						
+				}//if-end
+            }//for j - end
+		System.out.print(count + " ");
+		count=0;
+		}//for i - end
 		
 	  }
+		
    }
-}
+//}
+
+
+		//String arr[] = s.split(" ");
+
+		//for(int i = 0; i<N; i++){
+		//arr[i] = Integer.parseInt(s.split(" ")[i]);
+			
+

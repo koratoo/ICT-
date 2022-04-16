@@ -1,5 +1,10 @@
 package baekjoon;
 
+
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 //힌트) 10으로 나눈 나머지를 구하면 각 자리 수를 구할 수 있다.
@@ -55,28 +60,46 @@ public class _4673 {
 	        	int e = a+b+c+d+j;
 	        	
 	        	temp[j-1] = e; //j=1 temp[0] = 2;
-	        				   //j=2 temp[1] = 4; 
+	        				   //j=2 temp[1] = 4;
+	        	
 	        	
 	    		}//for-end
 	    	
+	    	Arrays.sort(temp);
+        	
+        	for (int i : temp) { }
+	    	
+        	
+        	int [] temp2 = new int[n];
 	    	for(int i =1; i<=n;i++){
-	    		
-	    		if(n>=temp[i-1]){
-	    			if(i!=temp[i-1]){
-	    			   System.out.println(i);
-	    		}
-	    			
+	    	      temp2[i-1]=i;
 	    	}
-	    }
-
-	}
-}
-
+	    	
+	    	List<Integer> arrayList = new ArrayList<Integer>();
+	    	for(int i = 0; i<n ;i++){
+	    	arrayList.add(temp[i]);
+	    	}
+	    	
+	    	List<Integer> arrayList2 = new ArrayList<Integer>();
+	    	for(int i = 0; i<n ;i++){
+	    	arrayList2.add(temp2[i]);
+	    	}
+	    	
+	    	arrayList2.removeAll(arrayList);
+	    	System.out.println(arrayList2.toString());
+	    	
+	    			//System.out.println(temp2[i]);
+	    		}
+	    	
+	    
+	    		
+	  }
 
 	
 		
 		
 		
-		
 	
+
+
 

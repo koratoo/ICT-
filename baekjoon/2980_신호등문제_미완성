@@ -1,0 +1,38 @@
+package baekjoon;
+//신호등 문제
+import java.util.Scanner;
+
+public class _2980 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt(); //신호등 갯수
+		int L = sc.nextInt(); //전체길이
+		
+		int t=0;//시간
+		int tf[][] = new int [N][3];
+		for(int i=0; i<N; i++){
+			for(int j =0;j<3;j++){
+				tf[i][j]=sc.nextInt();
+			}
+		}
+		
+		t=tf[0][0];
+		
+		
+		if(tf[0][1]>tf[0][0]){
+			t+=tf[0][1]-tf[0][0];
+		}
+		
+		t+= tf[1][0]-tf[0][0];
+		
+		t+= L-tf[1][0];
+		
+		System.out.println(t);
+		}
+		
+	}
+

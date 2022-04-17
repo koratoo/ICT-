@@ -29,10 +29,15 @@ public class _2980 {
 		
 		t+= tf[1][0]-tf[0][0];
 		
-		t+= L-tf[1][0];
+		if((t%(tf[1][0]+tf[1][1]))>tf[1][0]){
+			
+		}else{
+			t+= tf[1][0]-t%(tf[1][0]+tf[1][1]);
+		}
 		
 		System.out.println(t);
 		}
 		
 	}
+
 

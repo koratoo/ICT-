@@ -1,0 +1,46 @@
+package baekjoon;
+//char에서 null값은 0이다.
+import java.util.Scanner;
+
+public class _10798 {
+
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+
+		String arr[] = new String[15]; //조건이 최대 15개라 했으니까
+		//5줄
+		//String arr2[] = new String[15];
+	
+		
+		for(int i = 0; i<5;i++){
+		String N = sc.nextLine();
+		arr[i] = N;
+		}
+		
+		
+		for(int i=0; i<15;i++){
+		if(arr[0].length()>i){
+			System.out.print(arr[0].charAt(i));
+		   }
+		if(arr[1].length()>i){
+			System.out.print(arr[1].charAt(i));
+		}
+		if(arr[2].length()>i){
+			System.out.print(arr[2].charAt(i));
+		}
+		if(arr[3].length()>i){
+			System.out.print(arr[3].charAt(i));
+		}
+		if(arr[4].length()>i){
+			System.out.print(arr[4].charAt(i));
+		}
+		
+		
+		
+		
+		}//for-end
+		
+	}
+				
+}

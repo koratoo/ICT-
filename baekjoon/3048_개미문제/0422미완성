@@ -1,0 +1,104 @@
+package baekjoon;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class _3048_개미 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		int n1 = sc.nextInt();
+		int n2 = sc.nextInt();
+		
+		//배열의 크기
+		char [] arr1 = new char[n1+n2];
+		
+		String a = sc.next(); //nextLine으로 받으면 에러가 난다.
+		String b = sc.next();
+		int T = sc.nextInt();
+		//배열을 거꾸로 출력 식 n1집합
+		for(int i = 0; i<a.length(); i++){
+		arr1[i] = a.charAt(a.length()-i-1);
+		}
+		
+		//System.out.println(arr1);
+		
+		//n2는 그대로 출력
+		for(int i = a.length(); i<arr1.length; i++){
+		arr1[i] = b.charAt(i-a.length());
+		}
+		
+		char [] temp = new char[1];
+		
+		switch(T){
+		case 1:
+		temp[0] = arr1[a.length()-1];
+		arr1[a.length()-1] = arr1[a.length()];
+		arr1[a.length()] = temp[0];
+		
+		break;
+		case 2:
+		temp[0] = arr1[a.length()-1];
+		arr1[a.length()-1] = arr1[a.length()];
+		arr1[a.length()] = temp[0];
+			
+		temp[0] = arr1[a.length()-2];
+		arr1[a.length()-2] = arr1[a.length()-1];
+		arr1[a.length()-1] = temp[0];
+		
+		temp[0] = arr1[a.length()];
+		arr1[a.length()] = arr1[a.length()+1];
+		arr1[a.length()+1] = temp[0];
+		break;
+		
+		case 3:
+		
+		temp[0] = arr1[a.length()-1];
+		arr1[a.length()-1] = arr1[a.length()];
+		arr1[a.length()] = temp[0];
+		
+		temp[0] = arr1[a.length()-2];
+		arr1[a.length()-2] = arr1[a.length()-1];
+		arr1[a.length()-1] = temp[0];
+		
+		temp[0] = arr1[a.length()];
+		arr1[a.length()] = arr1[a.length()+1];
+		arr1[a.length()+1] = temp[0];
+			
+			
+		temp[0] = arr1[0];
+		arr1[0] = arr1[1];
+		arr1[1] = temp[0];
+		
+		temp[0] = arr1[a.length()-1];
+		arr1[a.length()-1] = arr1[a.length()];
+		arr1[a.length()] = temp[0];
+		
+		temp[0] = arr1[a.length()+1];
+		arr1[a.length()+1] = arr1[a.length()+2];
+		arr1[a.length()+2] = temp[0];
+		
+		break;
+		}
+		System.out.println(arr1);
+		
+		
+		//System.out.printf("%c%c",arr1,arr1[1]); //그냥 print를 쓰면 아스키코드를 반환한다.
+		/*
+		3 3
+		ABC
+		DEF
+		*/
+		
+		//System.arraycopy(arr1,0,arr3,0,arr1.length);
+		//System.arraycopy(arr2, 0, arr3, arr1.length, arr2.length);
+		
+		//System.out.println(Arrays.toString(arr3));
+		
+		
+	}
+
+}

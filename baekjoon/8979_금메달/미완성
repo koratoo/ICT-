@@ -1,0 +1,43 @@
+package 이번주문제;
+
+import java.util.Scanner;
+
+public class _8979 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		// 국가의 수(N)  알고싶은 국가(K)
+		// 1번국가  금 1개 은 두개 동 0개
+		// 국가 번호 K
+		// 금 G 은 S 동 B
+		// switch문 쓰면 괜찮을 듯
+		
+		int N = sc.nextInt();
+		int K = sc.nextInt();
+		
+		int arr[][] = new int[N][4];
+		for(int i = 0; i<N;i++){
+			for(int j = 0; j<4; j++){
+			arr[i][j] = sc.nextInt();
+			}
+		}
+		int max1 = arr[0][1] > arr[1][1] ? arr[0][1] : arr[1][1];
+		int max2 = max1 > arr[2][1] ? max1 : arr[2][1];
+		int max3 = max2 > arr[3][1] ? max2 : arr[3][1];
+		
+		System.out.print("금메달 갯수 : ");
+		System.out.println(max3); //금메달이 제일 많은 국가
+		System.out.print("국가번호 : ");
+		for(int i = 0;i<4;i++){
+		
+		if(max3 == arr[i][1]){
+			System.out.println(i+1);
+		}
+	}
+		
+	}
+
+}

@@ -1,0 +1,126 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class _1063_체스판{
+
+	static int row;
+	static int col;
+
+	static int [][] pan = new int[8][8]; 
+	static int pking;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner in = new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
+		
+		// 체스판의 크기는 8*8
+		
+		row=in.nextInt();
+		col=in.nextInt();
+		pking = pan[row][col];
+		
+		System.out.print(row+" ");
+		System.out.println(col);
+		
+		pan[3][3] = 33;
+		pan[2][2] = 22;
+		System.out.println(pan[row][col]);
+		
+		int N = in.nextInt();
+		for(int i = 0; i<N; i++){
+			String str = in.next();
+		
+		
+		switch(str){
+		
+		case "R" : 
+			R(in.next());
+			break;
+		case "L" : 
+			sb.append(L()).append('\n');
+			break;
+		case "B" : 
+			sb.append(B()).append('\n');
+			break;
+		case "T" : 
+			sb.append(T()).append('\n');
+			break;
+		case "RT" : 
+			sb.append(RT()).append('\n');
+			break;
+		case "LT" : 
+			sb.append(LT()).append('\n');
+			break;
+		case "RB" : 
+			sb.append(RB()).append('\n');
+			break;
+		case "LB" : 
+			sb.append(LB()).append('\n');
+			break;
+		
+		
+		   }
+		}
+		System.out.println(sb);
+	}
+
+	
+	public static int LB() {
+		// TODO Auto-generated method stub
+		//왼쪽아래 대각선으로
+	
+			row--;
+			col--;	
+			
+			return pan[row][col];
+	}
+
+	private static Object RB() {
+		// TODO Auto-generated method stub
+		//왼쪽아래 대각선으로
+		return null;
+	}
+
+	private static Object LT() {
+		// TODO Auto-generated method stub
+		//왼쪽 위 대각선으로
+		
+		return null;
+	}
+
+	private static Object RT() {
+		// TODO Auto-generated method stub
+		//오른쪽 위 대각선으로
+		
+		return null;
+	}
+
+	private static Object T() {
+		// TODO Auto-generated method stub
+		//한칸 위로
+		return null;
+	}
+
+	private static Object B() {
+		// TODO Auto-generated method stub
+		//한칸 아래로
+		
+		return null;
+	}
+
+	private static Object L() {
+		// TODO Auto-generated method stub
+		//킹의 위치에서 한칸 왼쪽으로
+		
+		return null;
+	}
+
+	private static void R(String next) {
+		// TODO Auto-generated method stub
+		//킹의 포지션에서 한칸 오른쪽으로 
+	}
+
+}

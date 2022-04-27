@@ -1,0 +1,19 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+		char ch = sc.nextLine().charAt(0);
+		int num = (int)ch;
+		
+		for(int i = 0; i<8; i++){
+			//System.out.println(num+i);
+			
+			System.out.print((char)(num+i)+" ");
+		}
+	}
+}

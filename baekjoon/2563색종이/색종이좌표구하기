@@ -1,0 +1,30 @@
+package 이번주문제;
+
+import java.util.Scanner;
+
+//색종이 문제 - 좌표 
+public class _2563 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		int arr[][] = new int [11][11];
+		
+		int X = sc.nextInt();
+		int Y = sc.nextInt();
+		int MX=X+10;
+		int MY=Y+10;
+		
+		for(int i = MY; i>Y-1;i--){
+			for(int j = X ;j< MX+1; j++){
+		
+			System.out.print("(" + j + ",");
+			System.out.print(i+")"+ " ");
+		}System.out.println();
+		}
+		
+	}
+
+}

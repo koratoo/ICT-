@@ -1,0 +1,50 @@
+package 이번주문제;
+
+import java.util.Scanner;
+
+//색종이 문제 - 좌표 
+public class _2563_색종이2{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		int arr[][]  = new int[101][101];
+		for(int i = 0; i<101;i++){
+			for(int j = 0; j<101; j++){
+				arr[i][j]=0;
+			}
+		}//101x101 배열을 만듬
+		int count = 0;
+		
+		int N = sc.nextInt();
+		
+		for(int k =0; k<N; k++){
+		int X = sc.nextInt();
+		int Y = sc.nextInt();
+		int MX=X+10;
+		int MY=Y+10;
+		
+		for(int i = MY; i>Y-1;i--){
+			for(int j = X ;j< MX+1; j++){
+		
+			arr[i][j] = 1;
+					}
+				}
+			}
+		
+		for(int i = 0; i<101; i++){
+			for(int j = 0; j<101; j++){
+				if(arr[i][j]==1){
+					count++;
+				}
+				
+			}
+			
+	}System.out.println(count);
+		
+		}
+}
+
+

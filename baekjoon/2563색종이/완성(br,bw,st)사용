@@ -1,0 +1,59 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+//색종이 문제 - 좌표 
+public class Main{
+
+	public static void main(String[] args) throws  IOException {
+		// TODO Auto-generated method stub
+
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st;
+
+	
+		int X,Y;
+		
+		
+		int arr[][]  = new int[100][100];
+		for(int i = 0; i<100;i++){
+			for(int j = 0; j<100; j++){
+				arr[i][j]=0;
+			}
+		}//101x101 배열을 만듬
+		int count = 0;
+		int N = Integer.parseInt(bf.readLine()); 
+		
+		for(int k =0; k<N; k++){
+		st=new StringTokenizer(bf.readLine());
+			
+		X = Integer.parseInt(st.nextToken()); 
+		Y = Integer.parseInt(st.nextToken()); 
+		int MX=X+9;
+		int MY=Y+9;
+		
+		for(int i = MY; i>Y-1;i--){
+			for(int j = X ;j< MX+1; j++){
+		
+			arr[i][j] = 1;
+					}
+				}
+			}
+		
+		for(int i = 0; i<100; i++){
+			for(int j = 0; j<100; j++){
+				if(arr[i][j]==1){
+					count++;
+				}
+			}
+		}
+		bw.write(count +"\n");
+		bw.flush();
+		bw.close();
+	}
+}
+	

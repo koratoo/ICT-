@@ -1,0 +1,46 @@
+package Main;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
+public class _1181_단어정렬2 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);		
+		int N= sc.nextInt();
+		String arr[] = new String[N];
+		for(int i = 0;i<N;i++){
+			arr[i] = sc.next();
+		}
+		
+		List<String> list = new ArrayList<String>();
+		for(int i=0; i<arr.length; i++)
+			if(!list.contains(arr[i]))	// list에 포함되어있는지 아닌지 체크
+				list.add(arr[i]);		// 해당 값이 없으면 넣기
+		
+		Collections.sort(list);
+		list.sort(new Comparator<String>(){
+			@Override
+			public int compare(String o1,String o2){
+				if(o1.length()==o2.length()){
+					return o1.compareTo(o2);
+				}else{
+					return Integer.compare(o1.length(), o2.length());
+				}
+			}
+		});
+		for(String i : list)
+		
+		System.out.println(i);
+		}
+	}
+
+
+
+
+
+

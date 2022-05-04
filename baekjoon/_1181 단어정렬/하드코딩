@@ -1,0 +1,61 @@
+package Main;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class _1181_단어정렬 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int sum = 0;
+		String [] arr = new String[N];//입력값
+		int [] arr2 = new int[N];//입력값 숫자로 변환 후 정렬
+		int [] arr3 = new int[N];//입력값 숫자로 변환
+ 		
+		for(int i =0 ; i<N;i++){
+			arr[i] = sc.next();
+		
+		}
+		
+		for(int i =0; i<N;i++ ){
+			for(int j=0;j<arr[i].length();j++){
+			sum += arr[i].charAt(j);
+			}
+			arr2[i] = sum;
+			sum=0;
+			}
+		Arrays.sort(arr2);
+		
+//		for(int i = 0; i<N;i++){
+//			System.out.println(arr2[i]);
+//		}
+		
+		for(int i =0; i<N;i++ ){
+			for(int j=0;j<arr[i].length();j++){
+			sum += arr[i].charAt(j);
+			}
+			arr3[i] = sum;
+			sum=0;
+			}
+		
+		for(int i=0;i<N;i++){
+			for(int j = 0;j<N;j++){
+				if(arr2[i]==arr3[j]){
+					System.out.println(arr[j]);
+				}	
+			}	
+		}//for i-end
+			
+
+	}
+	
+	
+}		
+

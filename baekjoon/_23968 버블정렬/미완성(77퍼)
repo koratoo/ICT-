@@ -1,0 +1,99 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+public class Main {
+//브론즈 1 문제
+//9프로 시간초과
+	public static void main(String[] args) throws IOException  {
+		// TODO Auto-generated method stub
+	
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));//선언
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		int K = Integer.parseInt(st.nextToken());
+
+		int temp = 0;
+		int count = 0;
+		
+		String M = br.readLine();
+		
+		String [] arr2 =M.split(" ");
+		for(String s : arr2){}
+		int arr[] = new int[N];
+		for(int i = 0;i<N;i++){
+			arr[i]=Integer.parseInt(arr2[i]);
+		}
+		//교환횟수를 찾는 것 뿐만아니라 arr를 정렬해 버리더라..
+		int brr[] = arr.clone();
+		findK(brr,N,K);
+		
+		/*
+		 * brr 복사본을 만듬
+		System.out.println(K);
+		System.out.println(count);
+		System.out.println(temp);
+		for(int i = 0;i<N;i++){
+			System.out.println(arr[i]);
+		}*/
+		
+		
+		for(int i=0; i<N-1;i++){
+					if(K==count)
+						break;
+					for(int j=0 ; j<N-1-i;j++){
+						if(arr[j]>arr[j+1]){ 
+							temp   = arr[j+1];
+							arr[j+1] = arr[j];
+							arr[j] = temp;
+							count++;
+						}
+						if(count ==K){
+							bw.write(arr[j] + " " + arr[j+1]);
+							//System.out.print(arr[j] + " " + arr[j+1]);
+							break;
+							}
+					
+				}//for j-end
+		}//for i-end
+		
+		
+		
+		bw.flush();
+		bw.close();	
+	}
+	
+		public static void findK(int arr[], int N, int K){
+			int temp;
+			int sum=0;
+			for(int i=0; i<N-1;i++){
+				int c = 0;
+				for(int j=0 ; j<N-1-i;j++){
+				
+				if(arr[j]>arr[j+1]){ 
+					temp   = arr[j+1];
+					arr[j+1] = arr[j];
+					arr[j] = temp;
+					c++;
+					}
+				}
+				
+				if(c==0) break;
+				sum+=c;
+				//sum의 값이 최대 교환횟수고
+			}//finK-end
+			//최대 교환횟수가 0이 아니면서(이부분은 계속 초기화 시켜줬기 때문에 넣어줌)
+			//K보다 최대교환횟수를 K가 초과했다면
+			if(sum!=0 && sum <K){
+				System.out.println(-1);
+			}		
+			
+		}
+		
+	}
+			

@@ -1,0 +1,48 @@
+package _자료구조;
+
+import java.util.Scanner;
+
+public class _1427_소트인사이드 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		String N = sc.next();
+		int length = N.length();
+		int arr[] = new int[length];
+		
+		for(int i=0; i<length; i++){
+			arr[i]=N.charAt(i);
+			//System.out.println(N.charAt(i));
+		}
+		
+		swap(arr,length);
+		
+		
+		
+		
+	}
+	
+	public static void swap(int arr[],int length){
+		
+		int temp;
+		for(int i=0; i<length-1;i++){
+			for(int j=0; j<length-1-i;j++){
+				if(arr[j]<arr[j+1]){//다음 값보다 현재 값이 작다면 바꿔줘라
+				temp=arr[j+1];
+				arr[j+1]=arr[j];
+				arr[j]=temp;
+				}
+				
+			}
+		}//for i-end
+		
+		for(int i=0; i<length;i++){
+		System.out.print(arr[i]-48);//아스키로 출력돼서
+		}
+		
+	}
+
+}
